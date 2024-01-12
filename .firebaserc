@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "purchase-order-control": {
+      "hosting": {
+        "purchase-order-control-app": [
+          "purchase-order-control"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "purchase-order-control"
+  }
+}

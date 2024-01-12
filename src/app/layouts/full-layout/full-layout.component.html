@@ -1,0 +1,12 @@
+<div class="app bg-white" [ngClass]="{'nav-collapsed' : getSidebarState()}">
+  <app-sidebar></app-sidebar>
+  <div class="app-wrapper">
+    <div class="app-content">
+      <div class="container-xxl ">
+        <router-outlet></router-outlet>
+        <div class="overlay" (click)="toggleSidebar()" [ngClass]="{'show' : getSidebarState()}"></div>
+      </div>
+
+    </div>
+  </div>
+</div>

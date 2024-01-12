@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "purchase-order-control-app",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
