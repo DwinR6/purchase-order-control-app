@@ -86,17 +86,17 @@ export const ROUTES: RouteInfo[] = [
     ]
   },
   {
-    path: '/products',
-    title: 'Products',
-    icon: 'bi bi-bag',
+    path: '/inventory',
+    title: 'Inventory',
+    icon: 'bi bi-bag  ',
     class: 'has-submenu',
     badge: '',
     badgeClass: '',
     isExternalLink: false,
     submenu: [
       {
-        path: '/products/list',
-        title: 'Product List',
+        path: '/inventory/products',
+        title: 'Products',
         icon: '',
         class: '',
         badge: '',
@@ -105,8 +105,8 @@ export const ROUTES: RouteInfo[] = [
         submenu: []
       },
       {
-        path: '/products/new',
-        title: 'New Product',
+        path: '/inventory/services',
+        title: 'Services',
         icon: '',
         class: '',
         badge: '',

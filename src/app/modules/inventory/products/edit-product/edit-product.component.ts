@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../../core/models/product.model';
-import { ProductService } from '../../../core/services/product.service';
+import { Product } from '../../../../core/models/product.model';
+import { ProductService } from '../../../../core/services/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError } from 'rxjs';
 
