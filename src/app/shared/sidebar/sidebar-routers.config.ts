@@ -22,7 +22,7 @@ export const ROUTES: RouteInfo[] = [
     isExternalLink: false,
     submenu: [
       {
-        path: '/orders',
+        path: '/orders/list',
         title: 'Order List',
         icon: '',
         class: '',
@@ -32,57 +32,16 @@ export const ROUTES: RouteInfo[] = [
         submenu: []
       },
       {
-        path: '/orders/',
-        title: 'List Orders',
-        icon: 'mdi mdi-cart-plus',
-        class: 'has-submenu',
+        path: '/orders/new',
+        title: 'New Order',
+        icon: '',
+        class: '',
         badge: '',
         badgeClass: '',
         isExternalLink: false,
-        submenu: [
-          {
-            path: '/orders/new',
-            title: 'New Order',
-            icon: 'mdi mdi-cart-plus',
-            class: '',
-            badge: '',
-            badgeClass: '',
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: '/orders/new/step1',
-            title: 'Step 1',
-            icon: 'mdi mdi-cart-plus',
-            class: '',
-            badge: '',
-            badgeClass: '',
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: '/orders/new/step2',
-            title: 'Step 2',
-            icon: 'mdi mdi-cart-plus',
-            class: '',
-            badge: '',
-            badgeClass: '',
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: '/orders/new/step3',
-            title: 'Step 3',
-            icon: 'mdi mdi-cart-plus',
-            class: '',
-            badge: '',
-            badgeClass: '',
-            isExternalLink: false,
-            submenu: []
-          }
-
-        ]
+        submenu: []
       }
+
     ]
   },
   {
@@ -107,6 +66,16 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/inventory/services',
         title: 'Services',
+        icon: '',
+        class: '',
+        badge: '',
+        badgeClass: '',
+        isExternalLink: false,
+        submenu: []
+      },
+      {
+        path: '/inventory/categories',
+        title: 'Categories',
         icon: '',
         class: '',
         badge: '',

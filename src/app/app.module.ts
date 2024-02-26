@@ -15,9 +15,10 @@ import { getFunctions, provideFunctions } from '@angular/fire/functions';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { firebaseConfig } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerListComponent } from './modules/customers/customer-list/customer-list.component';
 
 @NgModule({
-  declarations: [AppComponent, ContentLayoutComponent, FullLayoutComponent],
+  declarations: [AppComponent, ContentLayoutComponent, FullLayoutComponent, CustomerListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

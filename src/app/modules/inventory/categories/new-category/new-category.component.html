@@ -1,0 +1,42 @@
+<div class="container mt-4 col-12 col-md-11 col lg-10 col-xl-8 text-center p sm-0 p-md-2 p-lg-5">
+  <div class="card shadow border-0">
+    <div class="card-body p-5">
+      <div class="container mt-4 mx-auto">
+        <div class="d-flex justify-content-center mb-3">
+          <h3 class="text-center text-primary">New Category</h3>
+        </div>
+        <form [formGroup]="categoryForm" (ngSubmit)="saveCategory()">
+          <!--categorias de servcios o productos relacionados con una constructora-->
+          <div class="mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Type</mat-label>
+              <mat-select formControlName="type" required>
+                <mat-option value="product">Product</mat-option>
+                <mat-option value="service">Service</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" required placeholder="Ex. Building materials, Remodeling, etc.">
+            </mat-form-field>
+          </div>
+          <div class=" mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description" required
+                placeholder="Ex. Materials for construction, remodeling services, etc."></textarea>
+            </mat-form-field>
+          </div>
+
+
+          <div class="d-flex justify-content-center">
+            <a mat-button routerLink="../" class="me-2"><mat-icon>arrow_back</mat-icon> Back</a>
+            <button mat-raised-button color="primary" type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

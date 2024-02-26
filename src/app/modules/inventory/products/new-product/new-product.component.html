@@ -1,1 +1,151 @@
-<p>new-product works!</p>
+<div class="container mt-4 col-12 col-md-11 col-lg-10 col-xl-8 text-center p-sm-0 p-md-2 p-lg-5">
+  <div class="card shadow border-0">
+
+    <div class="card-body p-5">
+
+      <div class="container mt-4 mx-auto">
+        <div class="d-flex justify-content-center mb-3">
+          <h3 class="text-center text-primary">Nuevo Producto</h3>
+        </div>
+
+        <form [formGroup]="productForm" (ngSubmit)="saveProduct($event)">
+
+          <!-- tu-componente.component.html -->
+
+          <div class="mb-3 d-flex flex-wrap">
+            <div class="mb-3" *ngFor="let input of inputList; let i = index">
+              <div class="image-container">
+                <input type="file" (change)="onImageChange($event, i)" accept="image/*" style="display: none;"
+                  id="file-input-{{i}}">
+
+                <div class="image-buttons">
+                  <label for="file-input-{{i}}" mat-icon-button color="primary" class="">
+                    <mat-icon color="primary">cloud_upload</mat-icon>
+                  </label>
+                  <label for="file-input-{{i}}" mat-icon-button color="primary" class="upload-icon">
+                    <mat-icon color="primary">cloud_upload</mat-icon>
+                  </label>
+                  <button mat-icon-button color="warn" *ngIf="input.imageUrl" (click)="clearImage(i)"
+                    class="image-icon">
+                    <mat-icon>clear</mat-icon>
+                  </button>
+                </div>
+                <img *ngIf="input.imageUrl" [src]="input.imageUrl" alt="Imagen" class="preview-image" />
+              </div>
+            </div>
+          </div>
+
+          <!-- type -->
+          <div class="mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Type</mat-label>
+              <mat-select formControlName="type" required>
+                <mat-option value="product">Product</mat-option>
+                <mat-option value="service">Service</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <!-- Nombre -->
+          <div class="mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" required placeholder="Ex. Kitchen Remodeling, Cement, etc.">
+            </mat-form-field>
+          </div>
+
+          <!-- Categoría -->
+          <div class=" mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Category</mat-label>
+              <mat-select formControlName="category" required>
+                <mat-option *ngFor="let category of categories" [value]="category.name">
+                  {{category.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <!-- Unidad -->
+          <div class="mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Unity</mat-label>
+              <input matInput formControlName="unit" required placeholder="Ej. Kg, L, etc.">
+            </mat-form-field>
+          </div>
+
+          <!-- Precio -->
+          <div class="mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Price</mat-label>
+              <input matInput formControlName="price" type="number" required>
+            </mat-form-field>
+          </div>
+
+          <!-- Cantidad en Stock -->
+          <div class="mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Stock</mat-label>
+              <input matInput formControlName="stock_quantity" type="number" required>
+            </mat-form-field>
+          </div>
+
+          <!-- Descripción -->
+          <div class="mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description" required
+                placeholder="Ej. Cement for construction, etc."></textarea>
+            </mat-form-field>
+          </div>
+
+          <!--dinamic specifications container with title part and then render the specifications-->
+          <div class="mb-3">
+            <div class="d-flex justify-content-start mb-3">
+              <h5 class="text-center text-primary align-self-end">Especificaciones</h5>
+              <button mat-icon-button color="primary" type="button" class=""
+                (click)="addSpecification()"><mat-icon>add</mat-icon></button>
+            </div>
+            <div formArrayName="specifications">
+              <div *ngFor="let specification of specifications.controls; let i=index" [formGroupName]="i" class="mb-3">
+
+                <div class="row mb-3">
+
+                  <div class="col-12 col-md-4">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <mat-label>Name</mat-label>
+                      <input matInput formControlName="attribute" required placeholder="Ex. Color, Size, etc.">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-12 col-md-7">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <mat-label>Value</mat-label>
+                      <input matInput formControlName="value" required placeholder="Ex. Blue, 10, etc.">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-12 col-md-1 justify-content-center align-content-center">
+                    <!--mat icon-->
+                    <button mat-icon-button color="warn" type="button" (click)="removeSpecification(i)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Botón para regresar -->
+          <a mat-button routerLink="../" class="me-2"><mat-icon>arrow_back</mat-icon> Back</a>
+          <!-- Puedes agregar más campos según tus necesidades -->
+
+          <!-- Botón de envío -->
+          <button mat-raised-button color="primary" type="submit">Save</button>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

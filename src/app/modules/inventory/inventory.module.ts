@@ -14,6 +14,10 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { NewProductComponent } from './products/new-product/new-product.component';
 import { ProductFormComponent } from './products/product-form/product-form.component';
 import { EditProductComponent } from './products/edit-product/edit-product.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { CategoryListComponent } from './categories/category-list/category-list.component';
+import { NewCategoryComponent } from './categories/new-category/new-category.component';
 
 
 @NgModule({
@@ -21,7 +25,9 @@ import { EditProductComponent } from './products/edit-product/edit-product.compo
     ProductListComponent,
     NewProductComponent,
     ProductFormComponent,
-    EditProductComponent
+    EditProductComponent,
+    CategoryListComponent,
+    NewCategoryComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +39,8 @@ import { EditProductComponent } from './products/edit-product/edit-product.compo
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
+    MatButtonModule,
+    MatSelectModule,
 
   ]
 })
